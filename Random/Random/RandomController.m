@@ -10,6 +10,11 @@
 
 @implementation RandomController
 
+- (void)awakeFromNib {
+    NSDate *now = [NSDate date];
+    [self.textField setObjectValue:now];
+}
+
 - (IBAction)generate:(id)sender {
     int generated;
     generated = (int)(random() % 100) + 1;

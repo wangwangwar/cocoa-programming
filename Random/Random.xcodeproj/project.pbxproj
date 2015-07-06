@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14173A4C619F3130E5855A95 /* libPods-RandomTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E99BEB7CF5AF6C8ECF32002F /* libPods-RandomTests.a */; };
 		613EBF7C1B46E606006EB041 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 613EBF7B1B46E606006EB041 /* AppDelegate.m */; };
 		613EBF7E1B46E606006EB041 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 613EBF7D1B46E606006EB041 /* main.m */; };
 		613EBF801B46E606006EB041 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613EBF7F1B46E606006EB041 /* Images.xcassets */; };
 		613EBF831B46E606006EB041 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 613EBF811B46E606006EB041 /* MainMenu.xib */; };
-		613EBF8F1B46E606006EB041 /* RandomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 613EBF8E1B46E606006EB041 /* RandomTests.m */; };
+		613EBF8F1B46E606006EB041 /* RandomControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 613EBF8E1B46E606006EB041 /* RandomControllerSpec.m */; };
 		613EBF9A1B46E83D006EB041 /* RandomController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613EBF991B46E83D006EB041 /* RandomController.m */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EAF79DFCCABFF66D32B1AB4 /* Pods-RandomTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests.debug.xcconfig"; sourceTree = "<group>"; };
 		613EBF751B46E606006EB041 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613EBF791B46E606006EB041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		613EBF7A1B46E606006EB041 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,9 +37,11 @@
 		613EBF821B46E606006EB041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		613EBF881B46E606006EB041 /* RandomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		613EBF8D1B46E606006EB041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		613EBF8E1B46E606006EB041 /* RandomTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomTests.m; sourceTree = "<group>"; };
+		613EBF8E1B46E606006EB041 /* RandomControllerSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RandomControllerSpec.m; sourceTree = "<group>"; };
 		613EBF981B46E83D006EB041 /* RandomController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomController.h; sourceTree = "<group>"; };
 		613EBF991B46E83D006EB041 /* RandomController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomController.m; sourceTree = "<group>"; };
+		AA1E687FAEED13113D5A0257 /* Pods-RandomTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests.release.xcconfig"; sourceTree = "<group>"; };
+		E99BEB7CF5AF6C8ECF32002F /* libPods-RandomTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RandomTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,18 +56,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14173A4C619F3130E5855A95 /* libPods-RandomTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2319E8CF321EFBA98A943459 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E99BEB7CF5AF6C8ECF32002F /* libPods-RandomTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38D15454468B173DBF2DB5F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF79DFCCABFF66D32B1AB4 /* Pods-RandomTests.debug.xcconfig */,
+				AA1E687FAEED13113D5A0257 /* Pods-RandomTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		613EBF6C1B46E605006EB041 = {
 			isa = PBXGroup;
 			children = (
 				613EBF771B46E606006EB041 /* Random */,
 				613EBF8B1B46E606006EB041 /* RandomTests */,
 				613EBF761B46E606006EB041 /* Products */,
+				38D15454468B173DBF2DB5F7 /* Pods */,
+				2319E8CF321EFBA98A943459 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,7 +126,7 @@
 		613EBF8B1B46E606006EB041 /* RandomTests */ = {
 			isa = PBXGroup;
 			children = (
-				613EBF8E1B46E606006EB041 /* RandomTests.m */,
+				613EBF8E1B46E606006EB041 /* RandomControllerSpec.m */,
 				613EBF8C1B46E606006EB041 /* Supporting Files */,
 			);
 			path = RandomTests;
@@ -140,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 613EBF951B46E606006EB041 /* Build configuration list for PBXNativeTarget "RandomTests" */;
 			buildPhases = (
+				ABA25F2376560653A3DC8188 /* Check Pods Manifest.lock */,
 				613EBF841B46E606006EB041 /* Sources */,
 				613EBF851B46E606006EB041 /* Frameworks */,
 				613EBF861B46E606006EB041 /* Resources */,
+				7C13D9ACBEDD06C89EEF8AA8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,6 +236,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C13D9ACBEDD06C89EEF8AA8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RandomTests/Pods-RandomTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABA25F2376560653A3DC8188 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		613EBF711B46E605006EB041 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -225,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				613EBF8F1B46E606006EB041 /* RandomTests.m in Sources */,
+				613EBF8F1B46E606006EB041 /* RandomControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +413,7 @@
 		};
 		613EBF961B46E606006EB041 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EAF79DFCCABFF66D32B1AB4 /* Pods-RandomTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -374,6 +434,7 @@
 		};
 		613EBF971B46E606006EB041 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA1E687FAEED13113D5A0257 /* Pods-RandomTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
