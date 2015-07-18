@@ -10,9 +10,11 @@
 
 @interface AppDelegate ()
 
-@property (weak) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSTextField *textField;
-@property (strong) NSSpeechSynthesizer *speechSynth;
+@property(weak) IBOutlet NSWindow *window;
+@property(weak) IBOutlet NSTextField *textField;
+@property(strong) NSSpeechSynthesizer *speechSynth;
+@property(weak) IBOutlet NSButton *stopButton;
+@property(weak) IBOutlet NSButton *speakButton;
 
 @end
 
@@ -22,10 +24,11 @@
     self = [super init];
     if (self) {
         NSLog(@"init");
-        
+
         _speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:nil];
+        [_speechSynth setDelegate:self];
     }
-    
+
     return self;
 }
 
@@ -40,13 +43,24 @@
 - (IBAction)sayIt:(id)sender {
     NSString *text = [self.textField stringValue];
     [self.speechSynth startSpeakingString:text];
+    [self.stopButton setEnabled:TRUE];
+    [self.speakButton setEnabled:FALSE];
+
     NSLog(@"Have started to say: %@", text);
 }
-
 
 - (IBAction)stopIt:(id)sender {
     [self.speechSynth stopSpeaking];
     NSLog(@"Have stopped");
+}
+
+#pragma mark - NSSpeechSynthesizerDelegate
+
+- (void)speechSynthesizer:(NSSpeechSynthesizer *)sender didFinishSpeaking:(BOOL)finishedSpeaking {
+    [self.stopButton setEnabled:FALSE];
+    [self.speakButton setEnabled:TRUE];
+
+    NSLog(@"finishedSpeaking = %d", finishedSpeaking);
 }
 
 @end
