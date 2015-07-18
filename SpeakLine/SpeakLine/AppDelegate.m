@@ -47,6 +47,9 @@
 
 - (IBAction)sayIt:(id)sender {
     NSString *text = [self.textField stringValue];
+    if (text == nil || [text length] == 0) {
+        return;
+    }
     [self.speechSynth startSpeakingString:text];
     [self.stopButton setEnabled:TRUE];
     [self.speakButton setEnabled:FALSE];
