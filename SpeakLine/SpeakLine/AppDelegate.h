@@ -8,8 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, NSSpeechSynthesizerDelegate>
-
+@interface AppDelegate : NSObject<NSApplicationDelegate, NSSpeechSynthesizerDelegate,
+                                  NSTableViewDataSource, NSTableViewDelegate>
 
 @end
-

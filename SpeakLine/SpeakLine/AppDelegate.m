@@ -12,9 +12,11 @@
 
 @property(weak) IBOutlet NSWindow *window;
 @property(weak) IBOutlet NSTextField *textField;
-@property(strong) NSSpeechSynthesizer *speechSynth;
 @property(weak) IBOutlet NSButton *stopButton;
 @property(weak) IBOutlet NSButton *speakButton;
+@property(weak) IBOutlet NSTableView *tableView;
+@property(strong) NSSpeechSynthesizer *speechSynth;
+@property(strong) NSArray *voices;
 
 @end
 
@@ -27,17 +29,20 @@
 
         _speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:nil];
         [_speechSynth setDelegate:self];
+
+        _voices = [NSSpeechSynthesizer availableVoices];
     }
 
     return self;
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+- (void)awakeFromNib {
+    // When the table view appears on screen, the default voice should be selected
+    NSString *defaultVoice = [NSSpeechSynthesizer defaultVoice];
+    NSInteger defaultRow = [self.voices indexOfObject:defaultVoice];
+    NSIndexSet *indices = [NSIndexSet indexSetWithIndex:defaultRow];
+    [self.tableView selectRowIndexes:indices byExtendingSelection:NO];
+    [self.tableView scrollRowToVisible:defaultRow];
 }
 
 - (IBAction)sayIt:(id)sender {
@@ -61,6 +66,34 @@
     [self.speakButton setEnabled:TRUE];
 
     NSLog(@"finishedSpeaking = %d", finishedSpeaking);
+}
+
+#pragma mark - NSTableViewDataSource
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return [self.voices count];
+}
+
+- (id)tableView:(NSTableView *)tableView
+    objectValueForTableColumn:(NSTableColumn *)tableColumn
+                          row:(NSInteger)row {
+    NSString *v = [self.voices objectAtIndex:row];
+    NSDictionary *dict = [NSSpeechSynthesizer attributesForVoice:v];
+    return dict[NSVoiceName];
+}
+
+#pragma mark - NSTableViewDelegate
+
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+    NSInteger row = [self.tableView selectedRow];
+    if (row == -1) {
+        return;
+    }
+
+    NSString *selectedVoice = [self.voices objectAtIndex:row];
+    [self.speechSynth setVoice:selectedVoice];
+
+    NSLog(@"new voice = %@", selectedVoice);
 }
 
 @end
