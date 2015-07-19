@@ -19,4 +19,12 @@
     return self;
 }
 
+- (void)setNilValueForKey:(NSString *)key {
+    if ([key isEqual:@"expectedRaise"]) {
+        [self setExpectedRaise:0.0];
+    } else {
+        [super setNilValueForKey:key];
+    }
+}
+
 @end
