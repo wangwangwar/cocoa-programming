@@ -401,6 +401,7 @@
 				61AA40641B4AD3E60008EFAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61AA40651B4AD3E60008EFAE /* Build configuration list for PBXNativeTarget "SpeakLineTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +410,7 @@
 				61AA40671B4AD3E60008EFAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -425,6 +425,7 @@
 				61DA7D411B5B413A0045139B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61DA7D421B5B413A0045139B /* Build configuration list for PBXNativeTarget "RaiseManTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +434,7 @@
 				61DA7D441B5B413A0045139B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
