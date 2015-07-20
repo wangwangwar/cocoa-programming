@@ -12,4 +12,6 @@
     NSInteger fido;
 }
 
+- (IBAction)incrementFido:(id)sender;
+
 @end

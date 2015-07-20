@@ -35,6 +35,13 @@
     fido = x;
 }
 
+- (IBAction)incrementFido:(id)sender {
+    [self willChangeValueForKey:@"fido"];
+    fido++;
+    NSLog(@"fido is now %ld", fido);
+    [self didChangeValueForKey:@"fido"];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
 }
