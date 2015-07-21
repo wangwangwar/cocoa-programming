@@ -10,4 +10,8 @@
 
 @interface StretchView : NSView
 
+@property(nonatomic, strong) NSBezierPath *path;
+
+- (NSPoint)randomPoint;
+
 @end
