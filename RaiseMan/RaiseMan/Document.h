@@ -8,8 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class Person;
+
 @interface Document : NSDocument
 
 @property(nonatomic, strong) NSMutableArray *employees;
+
+- (void)insertObject:(Person *)object inEmployeesAtIndex:(NSUInteger)index;
+- (void)removeObjectFromEmployeesAtIndex:(NSUInteger)index;
 
 @end

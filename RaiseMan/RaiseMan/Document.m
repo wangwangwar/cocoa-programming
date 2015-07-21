@@ -31,6 +31,32 @@
     _employees = a;
 }
 
+- (void)insertObject:(Person *)p inEmployeesAtIndex:(NSUInteger)index {
+    NSLog(@"adding %@ to %@", p, [self employees]);
+    // Add the inverse of this operation to the undo stack
+    NSUndoManager *undo = [self undoManager];
+    [[undo prepareWithInvocationTarget:self] removeObjectFromEmployeesAtIndex:index];
+    if (![undo isUndoing]) {
+        [undo setActionName:@"Add Person"];
+    }
+
+    // Add the Persion to the array
+    [[self employees] insertObject:p atIndex:index];
+}
+
+- (void)removeObjectFromEmployeesAtIndex:(NSUInteger)index {
+    Person *p = [[self employees] objectAtIndex:index];
+    NSLog(@"removing %@ from %@", p, [self employees]);
+    // Add the inverse of this operation to the undo stack
+    NSUndoManager *undo = [self undoManager];
+    [[undo prepareWithInvocationTarget:self] insertObject:p inEmployeesAtIndex:index];
+    if (![undo isUndoing]) {
+        [undo setActionName:@"Remove Person"];
+    }
+
+    [[self employees] removeObjectAtIndex:index];
+}
+
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController {
     [super windowControllerDidLoadNib:aController];
     // Add any code here that needs to be executed once the windowController has loaded the
